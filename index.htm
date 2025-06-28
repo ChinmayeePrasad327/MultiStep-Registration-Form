@@ -19,13 +19,15 @@
   <div class = "page-wrapper">
  <nav class="navbar custom-navbar">
   <div class="container">
-      <img src="banner.png" alt="Logo" style="height: 50px; width: auto;">
-      
-   <h2><span class="fw-bold">EduJoin</span></h2>
-    </a>
-    <span class="navbar-text text-white fw-light ms-auto d-none d-md-block">
-      <h5>Student Registration Portal</h5>
-    </span>
+      <a href="inde.htm" class="d-flex align-items-center text-white text-decoration-none">
+  <img src="banner.png" alt="Logo" style="height: 50px; width: auto; margin-right: 10px;">
+  <h2 class="fw-bold mb-0">EduJoin</h2>
+</a>
+
+    <a href="inde.htm" class="navbar-text text-white fw-light ms-auto d-none d-md-block text-decoration-none">
+  <h5 class="mb-0">Student Registration Portal</h5>
+</a>
+
   </div>
 </nav>
   <div class="container my-5">
@@ -152,14 +154,33 @@
         <!-- Step 4 -->
         <div class="form-step d-none" id="step4">
           <h4>Review & Confirm</h4>
-          <ul class="list-group">
-            <li class="list-group-item"><strong>Name:</strong> <span id="reviewName"></span></li>
-            <li class="list-group-item"><strong>Email:</strong> <span id="reviewEmail"></span></li>
-            <li class="list-group-item"><strong>Phone:</strong> <span id="reviewPhone"></span></li>
-            <li class="list-group-item"><strong>Branch:</strong> <span id="reviewBranch"></span></li>
-            <li class="list-group-item"><strong>Courses:</strong> <span id="reviewCourses"></span></li>
+          <div class="review-summary p-4 rounded shadow-sm mb-3">
+  <h5 class="text-primary fw-semibold mb-3">
+    <i class="fas fa-user-check me-2 text-success"></i>Review Your Details
+  </h5>
 
-          </ul>
+  <div class="row mb-2">
+    <div class="col-4 text-muted"><i class="fas fa-user me-2 text-info"></i>Full Name:</div>
+    <div class="col-8" id="reviewName"></div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-4 text-muted"><i class="fas fa-envelope me-2 text-info"></i>Email:</div>
+    <div class="col-8" id="reviewEmail"></div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-4 text-muted"><i class="fas fa-phone me-2 text-info"></i>Phone:</div>
+    <div class="col-8" id="reviewPhone"></div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-4 text-muted"><i class="fas fa-code-branch me-2 text-info"></i>Branch:</div>
+    <div class="col-8" id="reviewBranch"></div>
+  </div>
+  <div class="row">
+    <div class="col-4 text-muted"><i class="fas fa-book-reader me-2 text-info"></i>Courses:</div>
+    <div class="col-8" id="reviewCourses"></div>
+  </div>
+</div>
+
           <div class="form-check mt-3">
             <input class="form-check-input" type="checkbox" id="terms" required>
             <label class="form-check-label" for="terms">I agree to the terms and privacy policy *</label>
