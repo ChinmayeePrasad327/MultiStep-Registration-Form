@@ -22,6 +22,18 @@ const prevBtn = document.getElementById("prevBtn");
 const submitBtn = document.getElementById("submitBtn");
 const form = document.getElementById("multiStepForm");
 const courseContainer = document.getElementById("step3-course-options");
+//For valid Step 1
+function isValidName(name) {
+    return /^[a-zA-Z ]{2,}$/.test(name.trim());
+}
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+}
+
+function isValidPhone(phone) {
+  return /^[6-9]\d{9}$/.test(phone.trim());
+}
 
 // Display a specific step
 function showStep(step) {
@@ -50,23 +62,56 @@ function validateStep(step) {
   };
 
   if (step === 1) {
-    let valid = true;
-    ["firstName", "lastName", "email", "phone"].forEach(id => {
-      const input = document.getElementById(id);
-      const error = document.getElementById(`${id}Error`);
-      if (!input.value.trim()) {
-        error.textContent = "This field is required.";
-        valid = false;
-      } else {
-        error.textContent = "";
-      }
-    });
+  let valid = true;
 
-    if (!valid) {
-      showValidationModal("Please fill in all required fields in Step 1.");
-    }
-    return valid;
+  const firstName = document.getElementById("firstName");
+  const lastName = document.getElementById("lastName");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+
+  const firstNameError = document.getElementById("firstNameError");
+  const lastNameError = document.getElementById("lastNameError");
+  const emailError = document.getElementById("emailError");
+  const phoneError = document.getElementById("phoneError");
+
+  // First Name
+  if (!isValidName(firstName.value)) {
+    firstNameError.textContent = "Enter a valid first name (only letters).";
+    valid = false;
+  } else {
+    firstNameError.textContent = "";
   }
+
+  // Last Name
+  if (!isValidName(lastName.value)) {
+    lastNameError.textContent = "Enter a valid last name (only letters).";
+    valid = false;
+  } else {
+    lastNameError.textContent = "";
+  }
+
+  // Email
+  if (!isValidEmail(email.value)) {
+    emailError.textContent = "Enter a valid email address.";
+    valid = false;
+  } else {
+    emailError.textContent = "";
+  }
+
+  // Phone
+  if (!isValidPhone(phone.value)) {
+    phoneError.textContent = "Enter a valid 10-digit phone number.";
+    valid = false;
+  } else {
+    phoneError.textContent = "";
+  }
+
+  if (!valid) {
+    showValidationModal("Please fix the errors in Step 1.");
+  }
+
+  return valid;
+}
 
 if (step === 2) {
   const checked = document.querySelector('input[name="branch"]:checked');
