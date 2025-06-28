@@ -13,7 +13,20 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="sty.css">
 </head>
+
+
 <body>
+ <nav class="navbar custom-navbar">
+  <div class="container">
+      <img src="banner.png" alt="Logo" style="height: 50px; width: auto;">
+      
+   <h2><span class="fw-bold">EduJoin</span></h2>
+    </a>
+    <span class="navbar-text text-white fw-light ms-auto d-none d-md-block">
+      <h5>Student Registration Portal</h5>
+    </span>
+  </div>
+</nav>
   <div class="container my-5">
     <div class="card shadow p-4">
       <!-- Progress Indicator -->
@@ -24,7 +37,7 @@
         </div>
         <div class="step" data-step="2">
           <div class="step-number">2</div>
-          <div class="step-description">Interests</div>
+          <div class="step-description">Branch</div>
         </div>
          <div class="step" data-step="3">
           <div class="step-number">3</div>
@@ -80,43 +93,51 @@
         <!-- Step 2 -->
 <div class="form-step d-none" id="step2">
   <h4>Select Your Branch</h4>
-  <p>Select at least one branch:</p>
+  <p>Select exactly one branch:</p>
 
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="CSE" id="cse">
+  <div class="form-check mb-2">
+    <input class="form-check-input" type="radio" name="branch" value="CSE" id="cse">
     <label class="form-check-label" for="cse"><i class="fas fa-laptop-code"></i> CSE</label>
   </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="CSD" id="csd">
+
+  <div class="form-check mb-2">
+    <input class="form-check-input" type="radio" name="branch" value="CSD" id="csd">
     <label class="form-check-label" for="csd"><i class="fas fa-database"></i> CSD</label>
   </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="CSM" id="csm">
+
+  <div class="form-check mb-2">
+    <input class="form-check-input" type="radio" name="branch" value="CSM" id="csm">
     <label class="form-check-label" for="csm"><i class="fas fa-robot"></i> CSM</label>
   </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="IT" id="it">
+
+  <div class="form-check mb-2">
+    <input class="form-check-input" type="radio" name="branch" value="IT" id="it">
     <label class="form-check-label" for="it"><i class="fas fa-network-wired"></i> IT</label>
   </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="ECE" id="ece">
+
+  <div class="form-check mb-2">
+    <input class="form-check-input" type="radio" name="branch" value="ECE" id="ece">
     <label class="form-check-label" for="ece"><i class="fas fa-microchip"></i> ECE</label>
   </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="EEE" id="eee">
+
+  <div class="form-check mb-2">
+    <input class="form-check-input" type="radio" name="branch" value="EEE" id="eee">
     <label class="form-check-label" for="eee"><i class="fas fa-bolt"></i> EEE</label>
   </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="MECH" id="mech">
+
+  <div class="form-check mb-2">
+    <input class="form-check-input" type="radio" name="branch" value="MECH" id="mech">
     <label class="form-check-label" for="mech"><i class="fas fa-cogs"></i> MECH</label>
   </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="CIVIL" id="civil">
+
+  <div class="form-check mb-2">
+    <input class="form-check-input" type="radio" name="branch" value="CIVIL" id="civil">
     <label class="form-check-label" for="civil"><i class="fas fa-building"></i> CIVIL</label>
   </div>
 
   <div class="text-danger small" id="interestsError"></div>
 </div>
+
 
 <!-- Step 3 -->
 <div class="form-step d-none" id="step3">
@@ -183,6 +204,9 @@
       </div>
     </div>
   </div>
+<footer class="bg-dark text-light py-3 mt-5 text-center">
+  <small>&copy; 2025 TechNext Solutions. All rights reserved.</small>
+</footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
