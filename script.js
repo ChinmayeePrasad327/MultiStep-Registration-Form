@@ -68,20 +68,21 @@ function validateStep(step) {
     return valid;
   }
 
-  if (step === 2) {
-    const checked = document.querySelector("#step2 input[type='checkbox']:checked");
-    const error = document.getElementById("interestsError");
+if (step === 2) {
+  const checked = document.querySelector('input[name="branch"]:checked');
+  const error = document.getElementById("interestsError");
 
-    if (!checked) {
-      error.textContent = "Please select exactly one branch.";
-      showValidationModal("You must select exactly one branch to continue.");
-      return false;
-    }
-
-    error.textContent = "";
-    selectedBranch = checked.value;
-    return true;
+  if (!checked) {
+    error.textContent = "Please select exactly one branch.";
+    showValidationModal("You must select a branch to continue.");
+    return false;
   }
+
+  error.textContent = "";
+  selectedBranch = checked.value;
+  return true;
+}
+
 
   if (step === 3) {
     const error = document.getElementById("coursesError"); // You can create this in HTML optionally
@@ -208,16 +209,7 @@ function resetForm() {
   showStep(currentStep);
 }
 
-// Enforce single checkbox selection for branch
-document.querySelectorAll('#step2 input[type="checkbox"]').forEach(box => {
-  box.addEventListener('change', function () {
-    if (this.checked) {
-      document.querySelectorAll('#step2 input[type="checkbox"]').forEach(cb => {
-        if (cb !== this) cb.checked = false;
-      });
-    }
-  });
-});
+
 
 // Show first step on load
 window.addEventListener("DOMContentLoaded", () => {
