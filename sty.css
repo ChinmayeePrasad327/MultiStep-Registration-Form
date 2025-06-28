@@ -112,7 +112,28 @@ h1, h2, h3, .step-description {
   margin-bottom: 1rem; /* or 1.5rem for more spacing */
 }
 
-  
+  html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.card.shadow.p-4 {
+  flex: 1;
+}
+
+.footer {
+  background-color: #343a40; /* dark */
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
   /* Buttons */
   .btn {
     border-radius: 30px;
