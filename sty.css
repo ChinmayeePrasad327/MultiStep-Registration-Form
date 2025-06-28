@@ -129,7 +129,10 @@ h1, h2, h3, .step-description {
 
 
 .footer {
-  margin-top: auto;  /* ✅ pushes footer to the bottom if content is short */
+  margin-top: auto;
+  position:fixed;
+  bottom:0;
+  left:0;
   background-color: #343a40;
   color: #fff;
   text-align: center;
